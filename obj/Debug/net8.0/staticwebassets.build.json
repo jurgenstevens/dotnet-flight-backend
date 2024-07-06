@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "u2SKMIthEFKi6kQJiefu66fcTs6BOZW/6tyiM8Le7D0=",
+  "Source": "DotNetFlights.Api",
+  "BasePath": "_content/DotNetFlights.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
