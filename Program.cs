@@ -9,6 +9,14 @@ List<FlightDto> flights = [
   new (3, "American", "LAX", 2468, new DateOnly(2025, 7, 24)),
 ];
 
+// include landing route http://localhost:5157/
+
+
+// GET http://localhost:5157/flights
 app.MapGet("flights", () => flights);
+
+// GET http://localhost:5157/flights/flightId
+app.MapGet("flights/{flightId}", (int flightId) => flights.Find(flight => flight.Id == flightId));
+
 
 app.Run();

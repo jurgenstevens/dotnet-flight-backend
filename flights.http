@@ -1,1 +1,4 @@
 GET http://localhost:5157/flights
+
+###
+GET http://localhost:5157/flights/1
