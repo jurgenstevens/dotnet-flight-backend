@@ -18,5 +18,18 @@ app.MapGet("flights", () => flights);
 // GET http://localhost:5157/flights/flightId
 app.MapGet("flights/{flightId}", (int flightId) => flights.Find(flight => flight.Id == flightId));
 
+// POST http://localhost:5157/flights
+app.MapPost('games', (CreateFlightDto, newFlight) =>) 
+{
+  FlightDto flight = new(
+    flight.Count + 1,
+    newFlight.Airline,
+    newFlight.Airport,
+    newFlight.FlightNo,
+    newFlight.Departs,
+    newFlight.Ticket,
+    newFlight.Meals
+  )
+}
 
 app.Run();
