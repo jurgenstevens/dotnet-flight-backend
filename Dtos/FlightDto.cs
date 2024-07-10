@@ -5,7 +5,7 @@ public record class FlightDto(
   string Airline, 
   string Airport, 
   int FlightNo, 
-  DateOnly Departs
-  // List Tickets Dto
-  // List Meals Dto
+  DateOnly Departs,
+  string Ticket, // will later be a Ticket class/Dto List
+  string Meals // will later be a Meals class/Dto List
 ); 
