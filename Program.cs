@@ -38,7 +38,21 @@ app.MapPost("flights", (CreateFlightDto newFlight) =>
   return Results.CreatedAtRoute(GetFlightEndpointName, new { flightId = flight.Id}, flight);
 });
 
-// GET http://localhost:5157/flights/flightId
-app.MapPut("flights/{flightId}", )
+// PUT http://localhost:5157/flights/flightId
+app.MapPut("flights/{flightId}", (int flightId, UpdateFlightDto updatedFlight) => 
+{
+  var index = flights.FindIndex(flight => flight.Id == flightId);
+
+  flights[index] = new FlightDto(
+    flightId,
+    updatedFlight.Airline,
+    updatedFlight.Airport,
+    updatedFlight.FlightNo,
+    updatedFlight.Departs,
+    updatedFlight.Ticket,
+    updatedFlight.Meals
+  );
+  return Results.NoContent();
+});
 
 app.Run();
