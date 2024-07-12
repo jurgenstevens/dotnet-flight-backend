@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5157/flights/4
+PUT http://localhost:5157/flights/5
 Content-Type: application/json
 
 {
