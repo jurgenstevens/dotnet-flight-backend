@@ -1,7 +1,7 @@
 ﻿namespace DotNetFlights.Api.Dtos;
 
 public record class FlightDto(
-  int Id, 
+  int FlightId, 
   string Airline, 
   string Airport, 
   int FlightNo, 

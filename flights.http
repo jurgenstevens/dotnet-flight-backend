@@ -16,3 +16,6 @@ Content-Type: application/json
   "Ticket": "Economy",
   "Meals": "Vegetarian"
 }
+
+###
+PUT http://localhost:5157/flights/1
