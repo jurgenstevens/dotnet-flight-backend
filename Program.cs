@@ -18,7 +18,12 @@ List<FlightDto> flights = [
 app.MapGet("flights", () => flights);
 
 // GET http://localhost:5157/flights/flightId
-app.MapGet("flights/{flightId}", (int flightId) => flights.Find(flight => flight.FlightId == flightId)).WithName(GetFlightEndpointName);
+app.MapGet("flights/{flightId}", (int flightId) => 
+{
+  FlightDto? flight = flights.Find(flight => flight.FlightId == flightId);
+
+  return flight is null ? Results.NotFound() : Results.Ok(flight);
+}).WithName(GetFlightEndpointName);
 
 // POST http://localhost:5157/flights
 app.MapPost("flights", (CreateFlightDto newFlight) => 
