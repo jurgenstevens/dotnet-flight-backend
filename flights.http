@@ -18,4 +18,14 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5157/flights/1
+PUT http://localhost:5157/flights/3
+Content-Type: application/json
+
+{
+  "airline": "American",
+  "airport": "LGA",
+  "flightNo": 2468,
+  "departs": "2025-07-24",
+  "ticket": "C3",
+  "meals": "Amatriciana"
+}

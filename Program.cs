@@ -55,4 +55,12 @@ app.MapPut("flights/{flightId}", (int flightId, UpdateFlightDto updatedFlight) =
   return Results.NoContent();
 });
 
+// DELETE http://localhost:5157/flights/flightId
+
+app.MapDelete("flights/{flightId}", (int flightId) => 
+{
+  flights.RemoveAll(flight => flight.FlightId == flightId);
+  return Results.NoContent();
+});
+
 app.Run();
