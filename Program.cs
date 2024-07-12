@@ -38,4 +38,7 @@ app.MapPost("flights", (CreateFlightDto newFlight) =>
   return Results.CreatedAtRoute(GetFlightEndpointName, new { flightId = flight.Id}, flight);
 });
 
+// GET http://localhost:5157/flights/flightId
+app.MapPut("flights/{flightId}", )
+
 app.Run();

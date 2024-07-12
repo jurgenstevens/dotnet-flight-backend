@@ -2,3 +2,17 @@ GET http://localhost:5157/flights
 
 ###
 GET http://localhost:5157/flights/1
+
+###
+POST http://localhost:5157/flights
+Content-Type: application/json
+
+{
+  "Id": 1,
+  "Airline": "American Airlines",
+  "Airport": "LAX",
+  "FlightNo": 1234,
+  "Departs": "2024-08-15",
+  "Ticket": "Economy",
+  "Meals": "Vegetarian"
+}
