@@ -1,7 +1,7 @@
 GET http://localhost:5157/flights
 
 ###
-GET http://localhost:5157/flights/1
+GET http://localhost:5157/flights/4
 
 ###
 POST http://localhost:5157/flights
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5157/flights/3
+PUT http://localhost:5157/flights/4
 Content-Type: application/json
 
 {
@@ -29,3 +29,6 @@ Content-Type: application/json
   "ticket": "C3",
   "meals": "Amatriciana"
 }
+
+###
+DELETE http://localhost:5157/flights/3
