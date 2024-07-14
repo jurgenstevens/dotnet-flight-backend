@@ -1,7 +1,9 @@
-﻿namespace DotNetFlights.Api.Dtos;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DotNetFlights.Api.Dtos;
 
 public record class CreateFlightDto(
-  string Airline,
+  [Required][StringLength(50)] string Airline,
   string Airport, 
   int FlightNo, 
   DateOnly Departs,

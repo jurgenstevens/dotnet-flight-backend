@@ -27,6 +27,10 @@ public static class FlightsEndpoints
     // POST http://localhost:5157/flights
     app.MapPost("flights", (CreateFlightDto newFlight) => 
     {
+      if(string.IsNullOrEmpty(newFlight.Airline))
+      {
+        return Results.BadRequest("Airline is required.")
+      }
       FlightDto flight = new(
         flights.Count + 1,
         newFlight.Airline,
