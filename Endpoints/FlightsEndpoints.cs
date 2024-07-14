@@ -29,7 +29,7 @@ public static class FlightsEndpoints
     {
       if(string.IsNullOrEmpty(newFlight.Airline))
       {
-        return Results.BadRequest("Airline is required.")
+        return Results.BadRequest("Airline is required.");
       }
       FlightDto flight = new(
         flights.Count + 1,
@@ -44,7 +44,8 @@ public static class FlightsEndpoints
       flights.Add(flight);
 
       return Results.CreatedAtRoute(GetFlightEndpointName, new { flightId = flight.FlightId}, flight);
-    });
+    })
+    .WithParameterValidation(); // Ensures parameters meet specified validation criteria
 
     // PUT http://localhost:5157/flights/flightId
     app.MapPut("flights/{flightId}", (int flightId, UpdateFlightDto updatedFlight) => 
