@@ -8,5 +8,6 @@ public class Flight
   public required int FlightNo { get; set;}
   public DateOnly Departs { get; set;}
   public required string Ticket { get; set;}
+  public int MealId { get; set; }
   public Meal? Meals { get; set;}
 }
