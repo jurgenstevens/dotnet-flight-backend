@@ -12,6 +12,7 @@ public static class FlightsEndpoints
 
   public static WebApplication MapFlightsEndpoints(this WebApplication app)
   {
+    var group = app.MapGroup("flights").WithParameterValidation();
     string GetFlightEndpointName = "GetFlight";
     // GET http://localhost:5157/flights
     app.MapGet("flights", () => flights);

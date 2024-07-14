@@ -24,3 +24,9 @@
 /Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/obj/Debug/net8.0/DotNetFlights.Api.pdb
 /Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/obj/Debug/net8.0/DotNetFlights.Api.genruntimeconfig.cache
 /Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/obj/Debug/net8.0/ref/DotNetFlights.Api.dll
+/Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/bin/Debug/net8.0/MinimalApis.Extensions.dll
+/Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/bin/Debug/net8.0/MiniValidation.dll
+/Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/obj/Debug/net8.0/DotNetFlights.Api.csproj.AssemblyReference.cache
+/Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/obj/Debug/net8.0/DotNetFlights.Api.MvcApplicationPartsAssemblyInfo.cs
+/Users/jurgenstevens/Projects/dotnet-flights/DotNetFlights.Api/obj/Debug/net8.0/DotNetFl.E1D745C9.Up2Date
