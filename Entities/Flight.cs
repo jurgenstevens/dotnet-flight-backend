@@ -7,7 +7,7 @@ public class Flight
   public required string Airport { get; set;}
   public required int FlightNo { get; set;}
   public DateOnly Departs { get; set;}
-  public ICollection<Ticket>? Ticket { get; } // Collection navigation containing dependents
+  public ICollection<Ticket>? Ticket { get; }  = new List<Ticket>();// Collection navigation containing dependents
   public int MealId { get; set; }
   public Meal? Meals { get; set;}
 }
