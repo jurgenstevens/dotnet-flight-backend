@@ -43,10 +43,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Aspire.Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.1.0, )"
-            },
             "DotNetEnv": {
               "target": "Package",
               "version": "[3.0.0, )"
@@ -66,6 +62,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.7, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "MinimalApis.Extensions": {
               "target": "Package",
