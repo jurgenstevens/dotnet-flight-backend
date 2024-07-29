@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotNetFlights.Api.Migrations
 {
     [DbContext(typeof(DotNetFlightsContext))]
-    [Migration("20240728180009_InitialCreate")]
+    [Migration("20240729033619_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -86,6 +86,7 @@ namespace DotNetFlights.Api.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Seat")

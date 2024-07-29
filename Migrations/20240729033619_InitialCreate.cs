@@ -54,7 +54,7 @@ namespace DotNetFlights.Api.Migrations
                     TicketId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Seat = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     FlightId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
