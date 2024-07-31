@@ -13,4 +13,6 @@ var app = builder.Build();
 
 app.MapFlightsEndpoints();
 
+app.MigrateDb();
+
 app.Run();
