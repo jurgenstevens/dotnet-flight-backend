@@ -1,6 +1,8 @@
 ﻿using DotNetFlights.Api.Data;
 using DotNetFlights.Api.Dtos;
 using DotNetFlights.Api.Entities;
+using DotNetFlights.Mapping;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotNetFlights.Api.Endpoints;
 
@@ -30,10 +32,9 @@ public static class FlightsEndpoints
     // POST http://localhost:5157/flights
     app.MapPost("/", (CreateFlightDto newFlight, DotNetFlightsContext dbContext) => 
     {
-      Flight flight = new()
-      {
-        
-      };
+      Flight flight = newFlight.ToEntity();
+
+      dbContext.Flights.Add(flight);
 
       flights.Add(flight);
 

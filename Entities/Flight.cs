@@ -8,6 +8,5 @@ public class Flight
   public required int FlightNo { get; set;}
   public DateOnly Departs { get; set;}
   public ICollection<Ticket>? Ticket { get; }  = new List<Ticket>(); // Collection navigation containing dependents
-  public int MealId { get; set; }
-  public Meal? Meals { get; set;}
+  public ICollection<Meal>? Meals { get; }  = new List<Meal>(); // Collection navigation containing dependents
 }
