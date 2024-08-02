@@ -5,9 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DotNetFlightsContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DotNetFlightsContext")));
-
-
+                            options.UseSqlServer(builder.Configuration.GetConnectionString("DotNetFlightsContext")));
 
 var app = builder.Build();
 

@@ -1,4 +1,6 @@
-﻿using DotNetFlights.Api.Dtos;
+﻿using DotNetFlights.Api.Data;
+using DotNetFlights.Api.Dtos;
+using DotNetFlights.Api.Entities;
 
 namespace DotNetFlights.Api.Endpoints;
 
@@ -15,10 +17,10 @@ public static class FlightsEndpoints
     var group = app.MapGroup("flights").WithParameterValidation();
     string GetFlightEndpointName = "GetFlight";
     // GET http://localhost:5157/flights
-    app.MapGet("flights", () => flights);
+    app.MapGet("/", () => flights);
 
     // GET http://localhost:5157/flights/flightId
-    app.MapGet("flights/{flightId}", (int flightId) => 
+    app.MapGet("/{flightId}", (int flightId) => 
     {
       FlightDto? flight = flights.Find(flight => flight.FlightId == flightId);
 
@@ -26,21 +28,12 @@ public static class FlightsEndpoints
     }).WithName(GetFlightEndpointName);
 
     // POST http://localhost:5157/flights
-    app.MapPost("flights", (CreateFlightDto newFlight) => 
+    app.MapPost("/", (CreateFlightDto newFlight, DotNetFlightsContext dbContext) => 
     {
-      if(string.IsNullOrEmpty(newFlight.Airline))
+      Flight flight = new()
       {
-        return Results.BadRequest("Airline is required.");
-      }
-      FlightDto flight = new(
-        flights.Count + 1,
-        newFlight.Airline,
-        newFlight.Airport,
-        newFlight.FlightNo,
-        newFlight.Departs,
-        newFlight.Ticket,
-        newFlight.Meals
-      );
+        
+      };
 
       flights.Add(flight);
 
@@ -49,7 +42,7 @@ public static class FlightsEndpoints
     .WithParameterValidation(); // Ensures parameters meet specified validation criteria
 
     // PUT http://localhost:5157/flights/flightId
-    app.MapPut("flights/{flightId}", (int flightId, UpdateFlightDto updatedFlight) => 
+    app.MapPut("/{flightId}", (int flightId, UpdateFlightDto updatedFlight) => 
     {
       var index = flights.FindIndex(flight => flight.FlightId == flightId);
 
@@ -72,7 +65,7 @@ public static class FlightsEndpoints
 
     // DELETE http://localhost:5157/flights/flightId
 
-    app.MapDelete("flights/{flightId}", (int flightId) => 
+    app.MapDelete("/{flightId}", (int flightId) => 
     {
       flights.RemoveAll(flight => flight.FlightId == flightId);
       return Results.NoContent();
